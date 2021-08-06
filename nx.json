@@ -18,6 +18,20 @@
       }
     }
   },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ],
+    "prepare-publish": [
+      {
+        "target": "prepare-publish",
+        "projects": "dependencies"
+      }
+    ]
+  },
   "projects": {
     "app1": {},
     "app1-e2e": {

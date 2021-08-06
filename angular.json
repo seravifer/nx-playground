@@ -155,6 +155,16 @@
               "libs/components/src/**/*.html"
             ]
           }
+        },
+        "prepare-publish": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "nx lint components --skip-nx-cache",
+              "nx build components --skip-nx-cache"
+            ],
+            "parallel": false
+          }
         }
       }
     },
@@ -195,6 +205,16 @@
               "libs/core/src/**/*.ts",
               "libs/core/src/**/*.html"
             ]
+          }
+        },
+        "prepare-publish": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "nx lint core --skip-nx-cache",
+              "nx build core --skip-nx-cache"
+            ],
+            "parallel": false
           }
         }
       }
@@ -237,11 +257,22 @@
               "libs/core-ui/src/**/*.html"
             ]
           }
+        },
+        "prepare-publish": {
+          "builder": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": [
+              "nx lint core-ui --skip-nx-cache",
+              "nx build core-ui --skip-nx-cache"
+            ],
+            "parallel": false
+          }
         }
       }
     }
   },
   "cli": {
+    "analytics": false,
     "defaultCollection": "@nrwl/angular"
   },
   "schematics": {
